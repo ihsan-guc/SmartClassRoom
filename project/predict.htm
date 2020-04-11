@@ -47,15 +47,19 @@
             success: function(msq) {
               if(msq[0]===1){
                 var image=document.getElementById("image");
-                image.src = 'muze.jpg';
+                image.src = 'Fan_open.gif';
               }
               if(msq[0]===2){
                 var image=document.getElementById("image");
-                image.src = 'Akvaryum.jpg';
+                image.src = 'Fan_closed.png';
                 }
                 if(msq[0]===3){
                 var image=document.getElementById("image");
-                image.src = 'galery.jpg';
+                image.src = 'Lamba_open.gif';
+                }
+                if(msq[0]===4){
+                var image=document.getElementById("image");
+                image.src = 'Lamba_closed.png';
                 }
             }
         })
