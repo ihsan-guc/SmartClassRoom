@@ -10,11 +10,12 @@ df.columns = column
 df.info()
 #Veri setindeki Türkçe Dolgu kelimlerinin kaldırılması 
 def remove_stopwords(df_fon):
-    stopwords = open('turkce-stop-words','r').read().split()
+    stopwords = open('turkece-stop-words.txt','r').read().split()
     df_fon['stopwords_removed'] = list(map(lambda doc:
-        [word for word in doc if word not in stopwords],df_fon['yorum']))
+        [word for word in doc if word not in stopwords],df_fon['Cümle']))
         
 # 1 Fan Açık 2 Fan Kapalı 3 Işık Açık 4 Işık Kapalı
+daf = remove_stopwords(df)
 df['Sinif'] = 1
 df.Sinif.iloc[5:10] = 2
 df.Sinif.iloc[10:15] = 3
@@ -44,5 +45,3 @@ from sklearn.metrics import zero_one_loss
 zero_one_loss(Y_test, predictions)
 print(zero_one_loss(Y_test, predictions))
 #print('"0,745" AUC: ', roc_auc_score(Y_test, predictions))
-
-
